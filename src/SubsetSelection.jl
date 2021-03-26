@@ -130,6 +130,7 @@ function subsetSelection(ℓ::LossFunction, Card::Sparsity, Y, X;
 
           w[1:n_indices] = recover_primal(ℓ, Y, X[:,indices[1:n_indices]], γ)
           upper_bound = value_primal(ℓ, Y, X[:,indices[1:n_indices]], w[1:n_indices], γ, cache)
+          print("upper bound", upper_bound)
 
           if upper_bound < best_s.obj
               consecutive_noimprov = 0
